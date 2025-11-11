@@ -5,55 +5,41 @@ To write a program to implement the Decision Tree Classifier Model for Predictin
 
 ## Equipments Required:
 1. Hardware – PCs
-2. Anaconda – Python 3.7 Installation / Jupyter notebook
+2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
-1. Import pandas
-2. Import Decision tree classifier
-3. Fit the data in the model
-4. Find the accuracy score
+STEP 1: START
 
-## Program:
+STEP 2: Import pandas library to read csv or excel file.
+
+STEP 3: Import LabelEncoder using sklearn.preprocessing library.
+
+STEP 4: Transform the data's using LabelEncoder.
+
+STEP 5: Import decision tree classifier from sklearn.tree library to predict the values.
+
+STEP 6: Find accuracy.
+
+STEP 7: Predict the values.
+
+STEP 8: STOP
 ```
-/*
 Program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
 Developed by: INESH N
-RegisterNumber: 212223220036
-*/
-```
-```
+RegisterNumber:  212223240070
+
 import pandas as pd
 data=pd.read_csv("Employee.csv")
-print("data.head():")
 data.head()
-```
-```
-print("data.info():")
 data.info()
-```
-```
-print("isnull() and sum():")
 data.isnull().sum()
-```
-```
-print("data value counts():")
 data["left"].value_counts()
-```
-```
 from sklearn.preprocessing import LabelEncoder
 le=LabelEncoder()
-```
-```
-print("data.head() for Salary:")
 data["salary"]=le.fit_transform(data["salary"])
 data.head()
-```
-```
-print("x.head():")
 x=data[["satisfaction_level","last_evaluation","number_project","average_montly_hours","time_spend_company","Work_accident","promotion_last_5years","salary"]]
 x.head()
-```
-```
 y=data["left"]
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=100)
@@ -61,52 +47,43 @@ from sklearn.tree import DecisionTreeClassifier
 dt=DecisionTreeClassifier(criterion="entropy")
 dt.fit(x_train,y_train)
 y_pred=dt.predict(x_test)
-```
-```
-print("Accuracy value:")
-from sklearn import metrics
+from sklearn import metrics 
 accuracy=metrics.accuracy_score(y_test,y_pred)
 accuracy
-```
-```
-print("Data Prediction:")
 dt.predict([[0.5,0.8,9,260,6,0,1,2]])
-```
+
 
 ```
-from sklearn.tree import plot_tree
-import matplotlib.pyplot as plt
 
-plt.figure(figsize=(8,6))
-plot_tree(dt, feature_names=x.columns, class_names=['salary', 'left'], filled=True)
-plt.show()
-
-```
 ## Output:
-![image](https://github.com/user-attachments/assets/0a4fa5db-4d79-4ebd-9926-f4d1ee83d1e3)
 
-![image](https://github.com/user-attachments/assets/ea8d6d09-3cc4-4875-ade1-46c9aa59e5c0)
+## HEAD:
 
-![image](https://github.com/user-attachments/assets/9b850bb3-7c7e-4775-b2e3-789789375431)
+![image](https://user-images.githubusercontent.com/98681990/174658785-dbeb43ad-725b-44e9-88d1-1971e6b605fd.png)
 
-![image](https://github.com/user-attachments/assets/7b31af4d-1ce9-4ff7-b45c-938ce231cb83)
+## INFO:
 
-![image](https://github.com/user-attachments/assets/71654c7d-2c86-4613-8d03-a010cb8a2b11)
+![image](https://user-images.githubusercontent.com/98681990/174659151-628fca92-47fa-4abc-ab4a-2aa82452d9f3.png)
 
-![image](https://github.com/user-attachments/assets/5442db03-d63b-404e-ab1f-d9552a1a6a83)
+## ISNULL:
 
-![image](https://github.com/user-attachments/assets/727ed6aa-319b-4a29-8147-e094729d5549)
+![image](https://user-images.githubusercontent.com/98681990/174659210-dfa89fd7-a2ac-45ce-b1ed-2a6e556b6b91.png)
 
-![image](https://github.com/user-attachments/assets/0e78318f-49be-400e-8e9d-3d4360dc9cc3)
+## LEFT:
 
-![image](https://github.com/user-attachments/assets/4d27bab8-fef9-46a9-869c-23296ad3caac)
+![image](https://user-images.githubusercontent.com/98681990/174659236-28bfb25c-e1e1-4906-8fc1-63c48b85ac2a.png)
 
+## HEAD USING LABELENCODER:
 
+![image](https://user-images.githubusercontent.com/98681990/174659261-6ae628e0-828e-4c2e-95ba-602b70d14b36.png)
 
+## ACCURACY:
 
+![image](https://user-images.githubusercontent.com/98681990/174659305-84fd74dd-13ee-4ef2-b0ef-e540c59a6354.png)
 
+## PREDICT:
 
-
+![image](https://user-images.githubusercontent.com/98681990/174659331-e6df8723-51b2-4988-9fbe-9cfd012cadc8.png)
 
 
 ## Result:
